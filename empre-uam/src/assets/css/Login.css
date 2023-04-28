@@ -29,7 +29,7 @@ nav {
 
 .logo2 {
  width: 50%;
- height: 60%;
+ height: 80%;
 }
 .empre-img {
   margin-left: 25%;
@@ -87,6 +87,7 @@ nav {
 .text1{
   color: var(--yellow);
   margin-left: 20px;
+  margin-right: 40px;
 }
 .index-img figure {
   margin: 10px;
@@ -132,6 +133,7 @@ nav {
   border: 2px solid var(--blue);
   padding: 30px;
   margin: 20px;
+  justify-content: center;
 }
 .form {
   display: flex;
@@ -180,12 +182,7 @@ nav {
   font-weight: bold;
   height: 50px;
 }
-.login-button {
-  margin-top: 14px;
-  margin-bottom: 20px;
-  justify-self: center;
-  width: 100px;
-}
+
 .secondary-button {
   background-color: var(--white);
   border-radius: 8px;
@@ -213,11 +210,11 @@ nav {
   color: var(--blue);
   border-bottom: 5px solid var(--yellow)
 }
-.register-button {
-  margin-top: 14px;
-  margin-bottom: 20px;
-  justify-self: center;
+
+.login-button {
+  width: 210px !important;
 }
+
 .footer {
   background-color: var(--blue);
   height: 100%;

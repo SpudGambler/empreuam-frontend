@@ -15,6 +15,7 @@ export const Register = () => {
     const [apellido, setApellido] = useState("");
     const [documento, setDocumento] = useState("");
     const [correo, setCorreo] = useState("");
+    const [celular, setCelular] = useState("");
     const [contrasena, setContrasena] = useState("");
     const [confirmarContrasena, setConfirmarContrasena] = useState("");
   
@@ -27,6 +28,7 @@ export const Register = () => {
         apellido,
         documento,
         correo,
+        celular,
         contrasena,
         confirmarContrasena,
         });
@@ -71,6 +73,7 @@ export const Register = () => {
             <label htmlFor="apellido">Apellido:</label>
             <label htmlFor="documento">Documento:</label>
             <label htmlFor="correo">Correo:</label>
+            <label htmlFor="celular">Celular:</label>
             <label htmlFor="contrasena">Contraseña:</label>
             <label htmlFor="confirmarContrasena">Confirmar contraseña:</label>
           </div>
@@ -99,6 +102,12 @@ export const Register = () => {
             id="correo"
             value={correo}
             onChange={(event) => setCorreo(event.target.value)}
+          />
+          <input
+            type="celular"
+            id="celular"
+            value={celular}
+            onChange={(event) => setCelular(event.target.value)}
           />
           <input
             type="password"

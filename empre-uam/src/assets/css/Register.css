@@ -128,6 +128,7 @@ input {
 }
 .register-button {
   width: 200px;
+  margin-top: 40px;
 }
 
 
@@ -141,7 +142,7 @@ input {
 .inputs {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
 }
 
 .inputs input {
@@ -152,6 +153,6 @@ input {
 .labels {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
   align-items: flex-start;
 }
