@@ -1,0 +1,157 @@
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --blue: #0069A3;
+    --yellow: #F4D73B;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+*{
+  box-sizing: border-box;
+}
+body {
+    margin:0;
+    font-family: 'Fira Sans', sans-serif;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--very-light-pink);
+  background-color: var(--yellow);
+}
+.navbar-left ul,
+.navbar-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.navbar-left, navbar-right{
+  display: flex;
+}
+.navbar-left ul, navbar-right ul {
+  margin-left: 12px;
+}
+.navbar-left ul li a,
+.navbar-right ul li a {
+  text-decoration: none;
+  color: var(--blue);
+  padding: 8px;
+  border-radius: 8px;
+}
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
+.navbar-email {
+  display: flex;
+  color: var(--black);
+  font-size: var(--sm);
+  margin-right: 12px;
+}
+.navbar-arrow {
+  display: flex;
+  position: relative;
+}
+.arrow {
+  transform: rotate(90deg);
+  color: var(--black);
+}
+.sec1 {
+  background-image: url(../imgs/uam.jpg);
+  height: 85vh;
+}
+.register-form {
+  display: grid;
+  border-radius: 8px;
+  border: 2px solid var(--blue);
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10px;
+  background-color: #006aa3ea;
+  opacity: 3;
+}
+.title {
+  color: var(--yellow);
+  justify-self: center;
+  font-size: xx-large;
+}
+.campo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 15px;
+}
+.campo input {
+  border-radius: 8px;
+}
+label {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-right: 10px;
+  color: var(--white);
+  font-size: var(--lg);
+}
+  
+label span {
+  margin-right: 0.5rem;
+}
+  
+input {
+  margin-bottom: 1rem;
+  margin-top: 18px;
+}
+.primary-button {
+  background-color: var(--yellow);
+  border-radius: 8px;
+  border: none;
+  color: var(--blue);
+  width: 100%;
+  cursor: pointer;
+  font-size: var(--md);
+  font-weight: bold;
+  height: 50px;
+}
+.register-button {
+  width: 200px;
+}
+
+
+.formGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputs input {
+  margin: 0;
+  border-radius: 8px;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
