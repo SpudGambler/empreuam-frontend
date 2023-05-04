@@ -72,16 +72,7 @@ nav {
     transform: rotate(90deg);
     color: var(--black);
 }
-.solicitud-asesoria {
-    display: grid;
-    border-radius: 8px;
-    border: 1px solid var(--yellow);
-    background-color: var(--blue);
-}
-.solicitud-title {
-    justify-self: center;
-    display: grid;
-}
+
 .primary-button {
     background-color: var(--yellow);
     border-radius: 8px;
@@ -104,6 +95,23 @@ nav {
     font-weight: bold;
     height: 50px;
 }
+
+
+.solicitar-asesoria {
+    height: 80vh;
+    
+}
+
+.solicitar-form {
+    display: grid;
+    border-radius: 8px;
+    border: 2px solid var(--blue);
+    margin: 3%;
+    background-color: #006aa3ea;
+}
+
+
+
 .footer {
     background-color: var(--blue);
     height: 100%;
@@ -120,3 +128,44 @@ nav {
     padding: 4px;
     border-radius: 9px;
 }
+.footer {
+    background-color: var(--blue);
+    height: 100%;
+    width: 100%;
+    margin-top: 0;
+  }
+  .footer-logo{
+    width: 300px;
+  }
+  .footer-element-icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 30px;
+    margin-right: 1%;
+    margin-left: 4%;
+  }
+  .footer-content {
+    display: grid;
+    justify-content: left;
+    align-content: center;
+    gap: 30px;
+    grid-auto-flow: column;
+  }
+  .footer-element {
+    gap: 4%;
+  }
+  .footer-element-title {
+    color: var(--yellow);
+    font-size: x-small;
+    margin-top: 20px;
+  }
+  .footer-element-info {
+    color: var(--white);
+    font-size: x-small;
+  }
+  .social-media {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin: 5px;
+  }

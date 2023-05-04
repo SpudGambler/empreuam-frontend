@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import '../assets/fonts/fonts.css';
 import '../assets/css/Login.css';
 import LogoNavbar from '../assets/logos/PNG/Logos_UAM-07.png';
+
 import Cupula from '../assets/imgs/antigua-estacion-del.jpg';
 import EmprendimientoImg from '../assets/icons/emprendimiento1.png';
 import Logo2 from '../assets/logos/PNG/Logos_UAM-08.png';
+
 import LogoFooter from '../assets/logos/PNG/Logos_UAM-03.png';
+import LocationIcon from '../assets/icons/location3.png';
+import CalendarIcon from '../assets/icons/calendar.png';
+import PhoneIcon from '../assets/icons/phone.png';
+import FacebookIcon from '../assets/icons/facebook.png';
+import TwitterIcon from '../assets/icons/twitter.png';
+import InstagramIcon from '../assets/icons/insta.png';
+
 import { Link } from 'react-router-dom';
 
 export const Login = () => {
@@ -93,16 +102,42 @@ export const Login = () => {
         </div>
     </div>
     <section>
-        <footer className="footer">
-            <div className="footer-content">
-                <img src={LogoFooter} className="footer-logo"/>
-            </div>
+    <footer className="footer">
+        <div className="footer-content">
+          <img src={LogoFooter} className="footer-logo"/>
+          <img src={LocationIcon} className="footer-element-icon" />
+          <div className='footer-element'>
+            <div className='footer-element-title'>Direccion</div>
+            <div className='footer-element-info'>Antigua estación del ferrocarril</div>
+            <div className='footer-element-info'>Manizales, Caldas. Colombia</div>
+          </div>
+          <img src={CalendarIcon} className="footer-element-icon" />
+          <div className='footer-element'>
+            <div className='footer-element-title'>Horario</div>
+            <div className='footer-element-info'>Lunes a Viernes</div>
+            <div className='footer-element-info'>8 a.m a 6 p.m</div>
+          </div>
+          <img src={PhoneIcon} className="footer-element-icon" />
+          <div className='footer-element'>
+            <div className='footer-element-title'>Contactanos</div>
+            <div className='footer-element-info'>Antigua estación del ferrocarril</div>
+            <div className='footer-element-info'>Manizales, Caldas. Colombia</div>
+          </div>
+          <div className='footer-element'>
+            <div className='footer-element-title'>Siguenos en Redes</div>
+            <img src={FacebookIcon} className="social-media" />
+            <img src={InstagramIcon} className="social-media" />
+            <img src={TwitterIcon} className="social-media" />
+          </div>
+          <div className='footer-element'>
+            <div className='footer-empreUAM-title'>2023 EmpreUAM</div>
+          </div>
+        </div>
 
-            <div className="footer-bottom">
-                
-            </div>
-        </footer>
-    </section>
+        <div className="footer-bottom">
+        </div>
+    </footer>
+  </section>
     </>
     
   )

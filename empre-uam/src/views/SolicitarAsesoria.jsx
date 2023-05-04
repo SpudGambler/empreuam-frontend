@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../assets/fonts/fonts.css';
-import '../assets/css/Register.css';
+import '../assets/css/SolicitarAsesoria.css';
 import LogoNavbar from '../assets/logos/PNG/Logos_UAM-07.png';
 import Arrow from '../assets/icons/flechita.svg';
 
@@ -13,30 +13,28 @@ import TwitterIcon from '../assets/icons/twitter.png';
 import InstagramIcon from '../assets/icons/insta.png';
 
 import { Link } from 'react-router-dom';
- 
-export const Register = () => {
 
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
-  const [documento, setDocumento] = useState("");
-  const [correo, setCorreo] = useState("");
-  const [celular, setCelular] = useState("");
-  const [contrasena, setContrasena] = useState("");
-  const [confirmarContrasena, setConfirmarContrasena] = useState("");
+export const Solicitar = () => {
+
+  const [categoria, setCategoria] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [cantidadPersonas, setCantidadPersonas] = useState("");
+  const [tema, setTema] = useState("");
+  const [sitio, setSitio] = useState("");
+  const [certificacion, setCertificacion] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({
-      nombre,
-      apellido,
-      documento,
-      correo,
-      celular,
-      contrasena,
-      confirmarContrasena,
+      categoria,
+      descripcion,
+      cantidadPersonas,
+      tema,
+      sitio,
+      certificacion,
       });
   };
-
+  
   return (
     <>
     <nav>
@@ -64,69 +62,68 @@ export const Register = () => {
       </ul>
     </div>
   </nav>
-  <section className="sec1">
+  <section className="solicitar-asesoria">
     
-    <div className="register-form">
-    <h1 className="title">Registro EmpreUAM</h1>
+    <div className="solicitar-form">
+    <h1 className="title">Solicitud de Asesoria</h1>
     <form onSubmit={handleSubmit}>
       <div className="formGroup">
         {/* labels */}
         <div className="labels">
-            <label htmlFor="nombre">Nombre:</label>
-            <label htmlFor="apellido">Apellido:</label>
-            <label htmlFor="documento">Documento:</label>
-            <label htmlFor="correo">Correo:</label>
-            <label htmlFor="celular">Celular:</label>
-            <label htmlFor="contrasena">Contraseña:</label>
-            <label htmlFor="confirmarContrasena">Confirmar contraseña:</label>
+            <label htmlFor="categoria">Categoria:</label>
+            <label htmlFor="descripcion">Descripcion:</label>
+            <label htmlFor="cantidadPersonas">Cantidad de Personas:</label>
+            <label htmlFor="tema">Tema:</label>
+            <label htmlFor="sitio">Sitio:</label>
+            <label htmlFor="certificacion">Certificacion:</label>
           </div>
         {/* inputs */}
         <div className="inputs">
           <input
             type="text"
-            id="nombre"
-            value={nombre}
-            onChange={(event) => setNombre(event.target.value)}
+            id="categoria"
+            value={categoria}
+            onChange={(event) => setCategoria(event.target.value)}
+          />
+          
+
+          <input
+            type=""
+            id="descripcion"
+            value={descripcion}
+            onChange={(event) => setDescripcion(event.target.value)}
           />
           <input
             type="text"
-            id="apellido"
-            value={apellido}
-            onChange={(event) => setApellido(event.target.value)}
+            id="cantidadPersonas"
+            value={cantidadPersonas}
+            onChange={(event) => setCantidadPersonas(event.target.value)}
           />
           <input
             type="text"
-            id="documento"
-            value={documento}
-            onChange={(event) => setDocumento(event.target.value)}
+            id="tema"
+            value={tema}
+            onChange={(event) => setTema(event.target.value)}
           />
           <input
-            type="email"
-            id="correo"
-            value={correo}
-            onChange={(event) => setCorreo(event.target.value)}
+            type="text"
+            id="sitio"
+            value={sitio}
+            onChange={(event) => setSitio(event.target.value)}
           />
-          <input
-            type="celular"
-            id="celular"
-            value={celular}
-            onChange={(event) => setCelular(event.target.value)}
-          />
-          <input
-            type="password"
-            id="contrasena"
-            value={contrasena}
-            onChange={(event) => setContrasena(event.target.value)}
-          />
-          <input
-            type="password"
-            id="confirmarContrasena"
-            value={confirmarContrasena}
-            onChange={(event) => setConfirmarContrasena(event.target.value)}
-          />
+          
+          <select 
+            name="certificacion" 
+            id="certificacion" 
+            value={certificacion} 
+            onChange={(event) => setCertificacion(event.target.value)} >
+              <option value="1">Si</option>
+              <option value="1">No</option>
+          </select>
+
         </div>
       </div>
-      <input type="submit" value="REGISTRARSE" className="primary-button register-button" />
+      <input type="submit" value="SOLICITAR" className="primary-button register-button" />
     </form>
     </div>
   </section>

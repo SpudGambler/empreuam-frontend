@@ -105,6 +105,8 @@ nav {
   grid-template-columns: auto auto auto;
   flex-wrap: wrap ;
   Justify-content: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 
 .info-container {
@@ -202,6 +204,11 @@ nav {
   color: var(--blue);
   border-bottom: 5px solid var(--yellow)
 }
+.info-img {
+  background-color: var(--yellow);
+  border-radius: 8px;
+  border: 3px solid var(--blue);
+}
 .register-title {
   margin-top: 5px;
   justify-self: center;
@@ -219,9 +226,41 @@ nav {
   background-color: var(--blue);
   height: 100%;
   width: 100%;
-  margin-top: 120px;
+  margin-top: 0;
 }
 .footer-logo{
   width: 300px;
+}
+.footer-element-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 30px;
+  margin-right: 1%;
+  margin-left: 4%;
+}
+.footer-content {
+  display: grid;
+  justify-content: left;
+  align-content: center;
+  gap: 30px;
+  grid-auto-flow: column;
+}
+.footer-element {
+  gap: 4%;
+}
+.footer-element-title {
+  color: var(--yellow);
+  font-size: x-small;
+  margin-top: 20px;
+}
+.footer-element-info {
+  color: var(--white);
+  font-size: x-small;
+}
+.social-media {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  margin: 5px;
 }
 
