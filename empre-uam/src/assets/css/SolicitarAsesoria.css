@@ -99,18 +99,17 @@ nav {
 
 .solicitar-asesoria {
     height: 80vh;
-    
+    background-image: url(../imgs/cupu3.jpg);
 }
 
 .solicitar-form {
     display: grid;
     border-radius: 8px;
     border: 2px solid var(--blue);
+    margin-top: 0 !important;
     margin: 3%;
     background-color: #006aa3ea;
 }
-
-
 
 .footer {
     background-color: var(--blue);
