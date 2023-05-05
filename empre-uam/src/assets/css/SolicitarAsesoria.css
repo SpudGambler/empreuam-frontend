@@ -70,17 +70,13 @@ navbar-right ul {
     color: var(--blue);
 }
 
-.navbar-email {
+.navbar-close-sesion {
     display: flex;
     color: var(--black);
     font-size: var(--sm);
     margin-right: 12px;
 }
 
-.navbar-arrow {
-    display: flex;
-    position: relative;
-}
 
 .arrow {
     transform: rotate(90deg);

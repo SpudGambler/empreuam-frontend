@@ -39,13 +39,10 @@ export const Home = () => {
           </ul>
       </div>
       <div className="navbar-right">
-        <ul>
-          <li className="navbar-email">platzi@example.com</li>
-          <li className="navbar-arrow">
-              <img src={Arrow} alt="arrow" className="arrow"/>
-          </li>
-      </ul>
-    </div>
+          <ul>
+            <li className="navbar-close-sesion">Cerrar sesion</li>
+          </ul>
+      </div>
   </nav>
   <section className="section1">
     <div>

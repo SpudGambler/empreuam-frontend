@@ -55,10 +55,7 @@ export const Solicitar = () => {
         </div>
         <div className="navbar-right">
           <ul>
-            <li className="navbar-email">platzi@example.com</li>
-            <li className="navbar-arrow">
-              <img src={Arrow} alt="arrow" className="arrow" />
-            </li>
+            <li className="navbar-close-sesion">Cerrar sesion</li>
           </ul>
         </div>
       </nav>
