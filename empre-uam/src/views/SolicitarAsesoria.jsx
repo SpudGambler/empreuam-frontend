@@ -82,7 +82,7 @@ export const Solicitar = () => {
                   onChange={(event) => setCategoria(event.target.value)}
                 />
                 <input
-                  type="text"
+                  type="number"
                   id="cantidadPersonas"
                   value={cantidadPersonas}
                   onChange={(event) => setCantidadPersonas(event.target.value)}
