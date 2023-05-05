@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import '../assets/fonts/fonts.css';
 import '../assets/css/SolicitarAsesoria.css';
 import LogoNavbar from '../assets/logos/PNG/Logos_UAM-07.png';
-import Arrow from '../assets/icons/flechita.svg';
 
 import LogoFooter from '../assets/logos/PNG/Logos_UAM-03.png';
 import LocationIcon from '../assets/icons/location3.png';
@@ -18,20 +17,14 @@ export const Solicitar = () => {
 
   const [categoria, setCategoria] = useState("");
   const [descripcion, setDescripcion] = useState("");
-  const [cantidadPersonas, setCantidadPersonas] = useState("");
-  const [tema, setTema] = useState("");
-  const [sitio, setSitio] = useState("");
-  const [certificacion, setCertificacion] = useState("");
+  const [negocio, setNegocio] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({
       categoria,
       descripcion,
-      cantidadPersonas,
-      tema,
-      sitio,
-      certificacion,
+      negocio,
     });
   };
 
@@ -66,9 +59,25 @@ export const Solicitar = () => {
           <form onSubmit={handleSubmit}>
             <div className="formGroup">
               {/* labels */}
+              
               <div className="labels">
-                <label htmlFor="categoria">Categoria:</label>
-                <label htmlFor="cantidadPersonas">Cantidad de Personas:</label>
+                <label htmlFor="Negocio">Negocio:</label>
+              </div>
+              <div className="inputs" >
+                <select 
+                  type="select"
+                  id="tema"
+                  value={negocio}
+                  onChange={(event) => setNegocio(event.target.value)}>
+
+                    <option value="Negocio1">Negocio1</option>
+                    <option value="Negocio2">Negocio2</option>
+                    <option value="Negocio3">Negocio3</option>
+                    <option value="Negocio4">Negocio4</option>
+                </select>
+              </div>
+              <div className="labels">
+                <label htmlFor="categoria">Categoria Proyecto:</label>
               </div>
               {/* inputs */}
               <div className="inputs">
@@ -77,31 +86,6 @@ export const Solicitar = () => {
                   id="categoria"
                   value={categoria}
                   onChange={(event) => setCategoria(event.target.value)}
-                />
-                <input
-                  type="number"
-                  id="cantidadPersonas"
-                  value={cantidadPersonas}
-                  onChange={(event) => setCantidadPersonas(event.target.value)}
-                />
-              </div>
-              <div className="labels">
-                <label htmlFor="tema">Tema:</label>
-                <label htmlFor="sitio">Sitio:</label>
-
-              </div>
-              <div className="inputs">
-                <input
-                  type="text"
-                  id="tema"
-                  value={tema}
-                  onChange={(event) => setTema(event.target.value)}
-                />
-                <input
-                  type="text"
-                  id="sitio"
-                  value={sitio}
-                  onChange={(event) => setSitio(event.target.value)}
                 />
               </div>
             </div>
@@ -115,29 +99,11 @@ export const Solicitar = () => {
                   id="descripcion"
                   value={descripcion}
                   onChange={(event) => setDescripcion(event.target.value)}
-                  cols="65"
+                  cols="53"
                   rows="8">
                 </textarea>
               </div>
             </div>
-            <div className="formGroup">
-              <div className="labels">
-                <label htmlFor="certificacion">Certificacion:</label>
-              </div>
-              <div className="inputs-radio">
-                <div onChange={(event) => setCertificacion(event.target.value)}>
-                  <label htmlFor="" style={{ display: 'inline' }}>
-                    <input type="radio" name="cert" value="Si" className="radio" /> Si
-                  </label>
-                  <label htmlFor="" style={{ display: 'inline' }}>
-                    <input type="radio" name="cert" value="No" className="radio" /> No
-                  </label>
-                  
-                </div>
-              </div>
-            </div>
-            
-
 
             <input type="submit" value="SOLICITAR" className="primary-button register-button" />
           </form>

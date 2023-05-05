@@ -9,11 +9,12 @@ import { Login } from './views/Login.jsx';
 import { Home } from './views/Home.jsx';
 import { Register } from './views/Register.jsx';
 import { Solicitar } from './views/SolicitarAsesoria.jsx';
+import App from './App.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <App />,
   },
   {
     path: "/home",

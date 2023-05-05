@@ -2,7 +2,6 @@ import React from 'react';
 import '../assets/fonts/fonts.css';
 import '../assets/css/Home.css';
 import LogoNavbar from '../assets/logos/PNG/Logos_UAM-07.png';
-import Arrow from '../assets/icons/flechita.svg';
 
 import SoñarloImg from '../assets/imgs/soñarlo.jpg';
 import AsesoriaImg from '../assets/icons/recibir-asesoria.png';

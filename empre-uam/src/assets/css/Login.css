@@ -28,8 +28,8 @@ nav {
 }
 
 .logo2 {
- width: 50%;
- height: 80%;
+  width: 70% !important;
+ height: 75%;
 }
 .empre-img {
   margin-left: 25%;

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import '../assets/fonts/fonts.css';
 import '../assets/css/Register.css';
 import LogoNavbar from '../assets/logos/PNG/Logos_UAM-07.png';
-import Arrow from '../assets/icons/flechita.svg';
 
 import LogoFooter from '../assets/logos/PNG/Logos_UAM-03.png';
 import LocationIcon from '../assets/icons/location3.png';
@@ -23,8 +22,25 @@ export const Register = () => {
   const [celular, setCelular] = useState("");
   const [contrasena, setContrasena] = useState("");
   const [confirmarContrasena, setConfirmarContrasena] = useState("");
+  
 
   const handleSubmit = (event) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        nombre: nombre,
+        apellido: apellido,
+        documento: documento,
+        password: contrasena,
+        rol: 'e',
+        email: correo,
+        celular: celular
+      })
+    };
+    fetch('http://localhost:3000/api/v1/users/user/entreprenaur', requestOptions)
+        .then(response => response.json());
+
     event.preventDefault();
     console.log({
       nombre,
