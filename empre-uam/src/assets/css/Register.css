@@ -81,7 +81,7 @@ nav {
   margin-left: 15%;
   margin-right: 15%;
   margin-bottom: 10px;
-  background-color: #006aa3ea;
+  background-color: #006aa3f3;
   opacity: 3;
 }
 .title {
@@ -136,6 +136,7 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .inputs {
