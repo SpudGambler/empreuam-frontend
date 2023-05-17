@@ -66,9 +66,6 @@ export const Register = () => {
               <li>
                   <a href="/html/nosotros.html">Nostros</a>
               </li>
-              <li>
-                  <a href="./solicitarAsesoria.html">Asesorias</a>
-              </li>
           </ul>
       </div>
   </nav>
@@ -134,7 +131,9 @@ export const Register = () => {
           />
         </div>
       </div>
-      <input type="submit" value="REGISTRARSE" className="primary-button register-button" />
+        <Link to={"/home"}>
+          <input type="submit" value="REGISTRARSE" className="primary-button login-button" />
+        </Link>
     </form>
     </div>
   </section>

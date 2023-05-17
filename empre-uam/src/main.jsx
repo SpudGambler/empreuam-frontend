@@ -10,6 +10,7 @@ import { Home } from './views/Home.jsx';
 import { Register } from './views/Register.jsx';
 import { Solicitar } from './views/SolicitarAsesoria.jsx';
 import App from './App.jsx';
+import { BusinessRegister } from './views/businessRegister.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/solicitarAsesoria",
     element: <Solicitar />,
+  },
+  {
+    path: "/registroNegocio",
+    element: <BusinessRegister />,
   }
 ]);
 

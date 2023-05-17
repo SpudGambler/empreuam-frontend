@@ -24,7 +24,7 @@ export const Home = () => {
     <nav>
       <div className="navbar-left">
           <div >
-                <Link to={"/"}> 
+                <Link to={"/home"}> 
                     <img src={LogoNavbar} alt="logo" className="logo" /> 
                 </Link> 
             </div>
@@ -50,25 +50,29 @@ export const Home = () => {
   </section>
   
   <section className="section2">
-      <div className="asesorias-container">
-          <h1 className="asesorias-title"> Asesorias</h1>
-          <img src={AsesoriaImg} className="asesoria-logo"/>
-          <Link to={"/solicitarAsesoria"}>
-            <input type="submit" value="SOLICITAR" className="primary-button asesorias-button" />
-          </Link>
-      </div>
-      
-      <div className="nosotros-container">
-        <h1 className="nosotros-title"> Conoce sobre nosotros</h1>
-        <img src={EquipoImg} className="nosotros-logo"/>
-        <input type="submit" value="VER MAS" className="primary-button nosotros-button" formaction="../html/nosotros.html"/>
-      </div>
 
-      <div className="seguimiento-container">
-        <h1 className="seguimiento-title"> Seguimiento individual</h1>
-        <img src={CheckList} className="seguimiento-logo"/>
-        <input type="submit" value="VER TAREAS" className="primary-button seguimiento-button" formaction="../html/asesorias.html"/>
-      </div>
+    <div className="negocio-container">
+      <h1 className="negocio-title"> Registrar Negocio</h1>
+      <img src={EquipoImg} className="negocio-logo"/>
+      <Link to={"/registroNegocio"}>
+          <input type="submit" value="REGISTRAR NEGOCIO" className="primary-button negocio-button" />
+      </Link>
+    </div>
+
+    <div className="asesorias-container">
+        <h1 className="asesorias-title"> Asesorias</h1>
+        <img src={AsesoriaImg} className="asesoria-logo"/>
+        <Link to={"/solicitarAsesoria"}>
+          <input type="submit" value="SOLICITAR" className="primary-button asesorias-button" />
+        </Link>
+    </div>
+
+    <div className="seguimiento-container">
+      <h1 className="seguimiento-title"> Seguimiento individual</h1>
+      <img src={CheckList} className="seguimiento-logo"/>
+      <input type="submit" value="VER TAREAS" className="primary-button seguimiento-button" formaction="../html/asesorias.html"/>
+    </div>
+
   </section>
   
   <section>

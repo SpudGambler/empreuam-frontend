@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../assets/fonts/fonts.css';
-import '../assets/css/Register.css';
+import '../assets/css/businessRegister.css';
 import LogoNavbar from '../assets/logos/PNG/Logos_UAM-07.png';
 
 import LogoFooter from '../assets/logos/PNG/Logos_UAM-03.png';
@@ -15,27 +15,18 @@ import { Link } from 'react-router-dom';
  
 export const BusinessRegister = () => {
 
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
-  const [documento, setDocumento] = useState("");
-  const [correo, setCorreo] = useState("");
-  const [celular, setCelular] = useState("");
-  const [contrasena, setContrasena] = useState("");
-  const [confirmarContrasena, setConfirmarContrasena] = useState("");
-  
+  const [nombreNegocio, setNombreNegocio] = useState("");
+  const [sector, setSector] = useState("");
+  const [descripcion, setDescripcion] = useState("");
 
   const handleSubmit = (event) => {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
-        nombre: nombre,
-        apellido: apellido,
-        documento: documento,
-        password: contrasena,
-        rol: 'e',
-        email: correo,
-        celular: celular
+        nombre: nombreNegocio,
+        sector: sector,
+        descripcion: descripcion,
       })
     };
     fetch('http://localhost:3000/api/v1/users/user/entreprenaur', requestOptions)
@@ -44,12 +35,8 @@ export const BusinessRegister = () => {
     event.preventDefault();
     console.log({
       nombre,
-      apellido,
-      documento,
-      correo,
-      celular,
-      contrasena,
-      confirmarContrasena,
+      sector,
+      descripcion,
       });
   };
 
@@ -58,7 +45,7 @@ export const BusinessRegister = () => {
     <nav>
       <div className="navbar-left">
           <div >
-                <Link to={"/"}> 
+                <Link to={"/home"}> 
                     <img src={LogoNavbar} alt="logo" className="logo" /> 
                 </Link> 
             </div>
@@ -74,67 +61,52 @@ export const BusinessRegister = () => {
   </nav>
   <section className="sec1">
     
-    <div className="register-form">
-    <h1 className="title">Registro EmpreUAM</h1>
+    <div className="negocio-form">
+    <h1 className="title">Registrar Negocio</h1>
     <form onSubmit={handleSubmit}>
       <div className="formGroup">
         {/* labels */}
         <div className="labels">
-            <label htmlFor="nombre">Nombre:</label>
-            <label htmlFor="apellido">Apellido:</label>
-            <label htmlFor="documento">Documento:</label>
-            <label htmlFor="correo">Correo:</label>
-            <label htmlFor="celular">Celular:</label>
-            <label htmlFor="contrasena">Contraseña:</label>
-            <label htmlFor="confirmarContrasena">Confirmar contraseña:</label>
+            <label htmlFor="nombreNegocio">Nombre del Negocio:</label>
+            <label htmlFor="sector">Sector:</label>
           </div>
         {/* inputs */}
         <div className="inputs">
           <input
             type="text"
             id="nombre"
-            value={nombre}
-            onChange={(event) => setNombre(event.target.value)}
+            value={nombreNegocio}
+            onChange={(event) => setNombreNegocio(event.target.value)}
           />
           <input
             type="text"
-            id="apellido"
-            value={apellido}
-            onChange={(event) => setApellido(event.target.value)}
-          />
-          <input
-            type="text"
-            id="documento"
-            value={documento}
-            onChange={(event) => setDocumento(event.target.value)}
-          />
-          <input
-            type="email"
-            id="correo"
-            value={correo}
-            onChange={(event) => setCorreo(event.target.value)}
-          />
-          <input
-            type="celular"
-            id="celular"
-            value={celular}
-            onChange={(event) => setCelular(event.target.value)}
-          />
-          <input
-            type="password"
-            id="contrasena"
-            value={contrasena}
-            onChange={(event) => setContrasena(event.target.value)}
-          />
-          <input
-            type="password"
-            id="confirmarContrasena"
-            value={confirmarContrasena}
-            onChange={(event) => setConfirmarContrasena(event.target.value)}
+            id="sector"
+            value={sector}
+            onChange={(event) => setSector(event.target.value)}
           />
         </div>
+        <div className="formGroup">
+          <div className="labels">
+            <label htmlFor="descripcion">Descripcion:</label>
+          </div>
+          <div className="inputs">
+            <textarea
+              className="textarea"
+              id="descripcion"
+              value={descripcion}
+              onChange={(event) => setDescripcion(event.target.value)}
+              cols="53"
+              rows="8">
+            </textarea>
+          </div>
+        </div>
+
       </div>
-      <input type="submit" value="REGISTRARSE" className="primary-button register-button" />
+      
+      <Link to={"/home"}>
+        <input type="submit" value="REGISTRAR NEGOCIO" className="primary-button login-button" />
+      </Link>
+
     </form>
     </div>
   </section>

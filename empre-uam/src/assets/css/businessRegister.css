@@ -1,0 +1,9 @@
+.negocio-form {
+    display: grid;
+    border-radius: 8px;
+    border: 2px solid var(--blue);
+    margin-top: 0 !important;
+    margin: 10%;
+    background-color: #006aa3f3;
+}
+

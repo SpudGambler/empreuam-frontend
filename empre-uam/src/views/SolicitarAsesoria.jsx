@@ -33,7 +33,7 @@ export const Solicitar = () => {
       <nav>
         <div className="navbar-left">
           <div >
-            <Link to={"/"}>
+            <Link to={"/home"}>
               <img src={LogoNavbar} alt="logo" className="logo" />
             </Link>
           </div>
@@ -42,7 +42,10 @@ export const Solicitar = () => {
               <a href="/html/nosotros.html">Nostros</a>
             </li>
             <li>
-              <a href="./solicitarAsesoria.html">Asesorias</a>
+              <Link to={""}>
+                <a>Asesorias</a>
+              </Link>
+              
             </li>
           </ul>
         </div>
@@ -105,7 +108,9 @@ export const Solicitar = () => {
               </div>
             </div>
 
-            <input type="submit" value="SOLICITAR" className="primary-button register-button" />
+            <Link to={"/home"}>
+              <input type="submit" value="SOLICITAR" className="primary-button login-button" />
+            </Link>
           </form>
         </div>
       </section>
