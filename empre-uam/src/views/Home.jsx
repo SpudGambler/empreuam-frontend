@@ -28,18 +28,12 @@ export const Home = () => {
                     <img src={LogoNavbar} alt="logo" className="logo" /> 
                 </Link> 
             </div>
-          <ul>
-              <li>
-                  <a href="/html/nosotros.html">Nostros</a>
-              </li>
-              <li>
-                  <a href="./solicitarAsesoria.html">Asesorias</a>
-              </li>
-          </ul>
       </div>
       <div className="navbar-right">
           <ul>
-            <li className="navbar-close-sesion">Cerrar sesion</li>
+            <Link to={"/"}>
+              <li className="navbar-close-sesion">Cerrar sesion</li>
+            </Link> 
           </ul>
       </div>
   </nav>
@@ -70,7 +64,9 @@ export const Home = () => {
     <div className="seguimiento-container">
       <h1 className="seguimiento-title"> Seguimiento individual</h1>
       <img src={CheckList} className="seguimiento-logo"/>
-      <input type="submit" value="VER TAREAS" className="primary-button seguimiento-button" formaction="../html/asesorias.html"/>
+      <Link to={"/seguimiento"}>
+        <input type="submit" value="VER TAREAS" className="primary-button tareas-button" />
+      </Link>
     </div>
 
   </section>

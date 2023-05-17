@@ -37,23 +37,14 @@ export const Solicitar = () => {
               <img src={LogoNavbar} alt="logo" className="logo" />
             </Link>
           </div>
-          <ul>
-            <li>
-              <a href="/html/nosotros.html">Nostros</a>
-            </li>
-            <li>
-              <Link to={""}>
-                <a>Asesorias</a>
-              </Link>
-              
-            </li>
-          </ul>
         </div>
         <div className="navbar-right">
           <ul>
-            <li className="navbar-close-sesion">Cerrar sesion</li>
+            <Link to={"/"}>
+              <li className="navbar-close-sesion">Cerrar sesion</li>
+            </Link> 
           </ul>
-        </div>
+      </div>
       </nav>
       <section className="solicitar-asesoria">
 

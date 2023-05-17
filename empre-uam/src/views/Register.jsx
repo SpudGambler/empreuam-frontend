@@ -62,11 +62,6 @@ export const Register = () => {
                     <img src={LogoNavbar} alt="logo" className="logo" /> 
                 </Link> 
             </div>
-          <ul>
-              <li>
-                  <a href="/html/nosotros.html">Nostros</a>
-              </li>
-          </ul>
       </div>
   </nav>
   <section className="sec1">

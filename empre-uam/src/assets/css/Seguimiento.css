@@ -1,0 +1,45 @@
+
+
+
+.seguimiento {
+    display: flex;
+    background-image: url(../imgs/periferica.jpg);
+}
+.tareas-container {
+    display: grid;
+    width: 50%;
+    height: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--blue);
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--blue);
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+.tareas-title {
+    margin-top: 5px;
+    justify-self: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: var(--yellow);
+}
+.solicitudes-container {
+    display: grid;
+    width: 50%;
+    height: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--blue);
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--yellow);
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+.solicitudes-title {
+    margin-top: 5px;
+    justify-self: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: var(--blue);
+}

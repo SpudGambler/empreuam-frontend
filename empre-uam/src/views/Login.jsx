@@ -39,11 +39,6 @@ export const Login = () => {
                   <img src={LogoNavbar} alt="logo" className="logo" /> 
                 </Link> 
               </div>
-            <ul>
-                <li>
-                    <a href="./nosotros.html">Nosotros</a>
-                </li>
-            </ul>
         </div>
     </nav>
     <div className="index-img">

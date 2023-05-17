@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from 'react';
 import '../assets/fonts/fonts.css';
-import '../assets/css/businessRegister.css';
+import '../assets/css/Seguimiento.css';
 import LogoNavbar from '../assets/logos/PNG/Logos_UAM-07.png';
+
+
 
 import LogoFooter from '../assets/logos/PNG/Logos_UAM-03.png';
 import LocationIcon from '../assets/icons/location3.png';
@@ -12,34 +14,8 @@ import TwitterIcon from '../assets/icons/twitter.png';
 import InstagramIcon from '../assets/icons/insta.png';
 
 import { Link } from 'react-router-dom';
- 
-export const BusinessRegister = () => {
 
-  const [nombreNegocio, setNombreNegocio] = useState("");
-  const [sector, setSector] = useState("");
-  const [descripcion, setDescripcion] = useState("");
-
-  const handleSubmit = (event) => {
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        nombre: nombreNegocio,
-        sector: sector,
-        descripcion: descripcion,
-      })
-    };
-    fetch('http://localhost:3000/api/v1/users/user/entreprenaur', requestOptions)
-        .then(response => response.json());
-
-    event.preventDefault();
-    console.log({
-      nombre,
-      sector,
-      descripcion,
-      });
-  };
-
+export const Seguimiento = () => {
   return (
     <>
     <nav>
@@ -59,59 +35,37 @@ export const BusinessRegister = () => {
           </ul>
       </div>
   </nav>
-  <section className="sec1">
-    
-    <div className="negocio-form">
-    <h1 className="title">Registrar Negocio</h1>
-    <form onSubmit={handleSubmit}>
-      <div className="formGroup">
-        {/* labels */}
-        <div className="labels">
-            <label htmlFor="nombreNegocio">Nombre del Negocio:</label>
-            <label htmlFor="sector">Sector:</label>
-          </div>
-        {/* inputs */}
-        <div className="inputs">
-          <input
-            type="text"
-            id="nombre"
-            value={nombreNegocio}
-            onChange={(event) => setNombreNegocio(event.target.value)}
-          />
-          <input
-            type="text"
-            id="sector"
-            value={sector}
-            onChange={(event) => setSector(event.target.value)}
-          />
+  <section className='seguimiento'>
+    <div className='tareas-container'>
+        <h1 className="tareas-title"> Tareas</h1>
+        <div className='lista-tareas'>
+            <h1>tarea1</h1>
+            <h1>tarea2</h1>
+            <h1>tarea3</h1>
+            <h1>tarea4</h1>
+            <h1>tarea5</h1>
+            <h1>tarea6</h1>
+            <h1>tarea7</h1>
+            <h1>tarea8</h1>
         </div>
-        <div className="formGroup">
-          <div className="labels">
-            <label htmlFor="descripcion">Descripcion:</label>
-          </div>
-          <div className="inputs">
-            <textarea
-              className="textarea"
-              id="descripcion"
-              value={descripcion}
-              onChange={(event) => setDescripcion(event.target.value)}
-              cols="53"
-              rows="8">
-            </textarea>
-          </div>
+    </div>
+    <div className='solicitudes-container'>
+        <h1 className="solicitudes-title"> Solicitudes</h1>
+        <div className='lista-solicitudes'>
+            <h1>solicitud1</h1>
+            <h1>solicitud2</h1>
+            <h1>solicitud3</h1>
+            <h1>solicitud4</h1>
+            <h1>solicitud5</h1>
+            <h1>solicitud6</h1>
+            <h1>solicitud7</h1>
+            <h1>solicitud8</h1>
         </div>
-
-      </div>
-      
-      <Link to={"/home"}>
-        <input type="submit" value="REGISTRAR NEGOCIO" className="primary-button login-button" />
-      </Link>
-
-    </form>
     </div>
   </section>
-  
-  
+  <section className='tareas'>
+    
+  </section>
   
   <section>
     <footer className="footer">
