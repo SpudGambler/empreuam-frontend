@@ -5,7 +5,7 @@
     display: flex;
     background-image: url(../imgs/periferica.jpg);
 }
-.tareas-container {
+.negocios-container {
     display: grid;
     width: 50%;
     height: 100%;
@@ -17,7 +17,7 @@
     margin-top: 4%;
     margin-bottom: 4%;
 }
-.tareas-title {
+.negocios-title {
     margin-top: 5px;
     justify-self: center;
     font-weight: bold;

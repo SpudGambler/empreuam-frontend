@@ -36,17 +36,13 @@ export const Seguimiento = () => {
       </div>
   </nav>
   <section className='seguimiento'>
-    <div className='tareas-container'>
-        <h1 className="tareas-title"> Tareas</h1>
-        <div className='lista-tareas'>
-            <h1>tarea1</h1>
-            <h1>tarea2</h1>
-            <h1>tarea3</h1>
-            <h1>tarea4</h1>
-            <h1>tarea5</h1>
-            <h1>tarea6</h1>
-            <h1>tarea7</h1>
-            <h1>tarea8</h1>
+    <div className='negocios-container'>
+        <h1 className="negocios-title"> Negocios</h1>
+        <div className='lista-negocios'>
+            <h1>negocio1</h1>
+            <h1>negocio2</h1>
+            <h1>negocio3</h1>
+        
         </div>
     </div>
     <div className='solicitudes-container'>
