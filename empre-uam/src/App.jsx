@@ -1,27 +1,27 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect } from 'react'
+//import reactLogo from './assets/react.svg'
+//import viteLogo from '/vite.svg'
 import { Login } from './views/Login'
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [data, setData] = useState([]);
+  //const [count, setCount] = useState(0);
+  //const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/v1/users", {
+    /* fetch("http://localhost:3000/api/v1/user", {
       method: 'get'
     })
       .then((res) => res.json())
       .then((jsonResponse) => {
         setData(jsonResponse.data);
-      });
-  }, []);
-  
+      }); */
+  });
+
 
   return (
     <>
-      <Login />
       
+      <Login />
     </>
   )
   /* return(
