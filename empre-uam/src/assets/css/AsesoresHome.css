@@ -1,0 +1,15 @@
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --blue: #0069A3;
+    --yellow: #F4D73B;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+  }
+.section2 {
+
+    background-image: url(../imgs/cupu3.jpg);
+}

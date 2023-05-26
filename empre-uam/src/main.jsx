@@ -21,6 +21,10 @@ import { ManejoAsesores } from './views/admin/ManejoAsesores.jsx';
 import { ManejoEmprendedores } from './views/admin/ManejoEmprendedores.jsx';
 import { ManejoAsesorias } from './views/admin/ManejoAsesorias.jsx';
 import { SeguimientoHome } from './views/seguimientos/SeguimientoHome';
+
+
+import { AsesoresHome } from './views/asesores/AsesoresHome';
+import { AsesoriasAsesores } from './views/asesores/AsesoriasAsesores';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -73,6 +77,14 @@ const router = createBrowserRouter([
   {
     path: "/ManejoAsesorias",
     element: <ManejoAsesorias />,
+  },
+  {
+    path: "/AsesoresHome",
+    element: <AsesoresHome />,
+  },
+  {
+    path: "/AsesoriasAsesores",
+    element: <AsesoriasAsesores />,
   }
 ]);
 
