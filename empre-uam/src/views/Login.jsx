@@ -38,6 +38,8 @@ export const Login = () => {
               navigate('/home');
             } else if (body.rol === "ad") {
               navigate('/AdminHome');
+            } else if (body.rol === "as") {
+              navigate('/AsesoresHome');
             }
           }
         })
@@ -71,6 +73,8 @@ export const Login = () => {
                   navigate('/home');
                 } else if (body.rol === "ad") {
                   navigate('/AdminHome');
+                } else if (body.rol === "as") {
+                  navigate('/AsesoresHome');
                 }
               }
             })

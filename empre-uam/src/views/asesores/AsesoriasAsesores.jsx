@@ -10,7 +10,7 @@ import FacebookIcon from '../../assets/icons/facebook.png';
 import TwitterIcon from '../../assets/icons/twitter.png';
 import InstagramIcon from '../../assets/icons/insta.png';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Navbar } from '../../components/Navbar/Navbar';
 import { NoAuthNavbar } from '../../components/NoAuthNavbar/NoAuthNavbar';
 
@@ -29,6 +29,13 @@ export const AsesoriasAsesores = () => {
                     if (response.ok) {
                         const body = await response.json();
                         setUser(body);
+                        if (body.rol !== "as") {
+                            if (body.rol === "e") {
+                                navigate('/home');
+                            } else if (body.rol === "ad") {
+                                navigate('/AdminHome');
+                            }
+                        }
                     } else {
                         navigate('/');
                     }
@@ -53,20 +60,20 @@ export const AsesoriasAsesores = () => {
         <>
             {user ? <Navbar /> : <NoAuthNavbar />}
             <section className='sect1'>
-            <section className='asesorias'>
-                <div className='negocios-container'>
-                    <h1 className="negocios-title"> Asesorias</h1>
-                    <div className='lista-negocios'>
-                        <ul>
-                            {businesses.map(business => <h1 key={business}>{business.nombre}</h1>)}
-                        </ul>
+                <section className='asesorias'>
+                    <div className='negocios-container'>
+                        <h1 className="negocios-title"> Asesorias</h1>
+                        <div className='lista-negocios'>
+                            <ul>
+                                {businesses.map(business => <h1 key={business}>{business.nombre}</h1>)}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
+
+                </section>
             </section>
-            </section>
-            
-            
+
+
 
             <section>
                 <footer className="footer">

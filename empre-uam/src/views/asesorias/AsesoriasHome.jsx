@@ -28,6 +28,13 @@ export const AsesoriasHome = () => {
                     if (response.ok) {
                         const body = await response.json();
                         setUser(body);
+                        if (body.rol !== "e") {
+                            if (body.rol === "as") {
+                                navigate('/AsesoresHome');
+                            } else if (body.rol === "ad") {
+                                navigate('/AdminHome');
+                            }
+                        }
                     } else {
                         navigate('/');
                     }

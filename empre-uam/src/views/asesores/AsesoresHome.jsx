@@ -5,9 +5,7 @@ import '../../assets/css/Home.css';
 import '../../assets/css/AsesoresHome.css';
 
 import Sonarlo from '../../assets/imgs/soñarlo.jpg';
-import AsesoriaImg from '../../assets/icons/recibir-asesoria.png';
 import EquipoImg from '../../assets/imgs/equipo.jpg';
-import CheckList from '../../assets/icons/checklist2.png';
 
 import LogoFooter from '../../assets/logos/PNG/Logos_UAM-03.png';
 import LocationIcon from '../../assets/icons/location3.png';
@@ -35,9 +33,11 @@ export const AsesoresHome = () => {
           if (response.ok) {
             const body = await response.json();
             setUser(body);
-            if (body.rol !== "ad") {
+            if (body.rol !== "as") {
               if (body.rol === "e") {
                 navigate('/home');
+              } else if (body.rol === "ad") {
+                navigate('/AdminHome');
               }
             }
           } else {
@@ -69,7 +69,7 @@ export const AsesoresHome = () => {
           </Link>
         </div>
 
-        
+
 
       </section>
 

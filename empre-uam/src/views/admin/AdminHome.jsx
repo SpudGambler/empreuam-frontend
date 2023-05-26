@@ -37,6 +37,8 @@ export const AdminHome = () => {
             if (body.rol !== "ad") {
               if (body.rol === "e") {
                 navigate('/home');
+              } else if (body.rol === "as") {
+                navigate('/AsesoresHome');
               }
             }
           } else {
