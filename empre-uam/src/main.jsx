@@ -14,8 +14,9 @@ import { Register } from './views/Register.jsx';
 import { SolicitudAsesoria } from './views/asesorias/SolicitudAsesoria';
 import { AsesoriasHome } from './views/asesorias/AsesoriasHome.jsx';
 import { RegistroNegocio } from './views/negocios/RegistroNegocio.jsx';
+import { SeguimientoIndividual } from './views/seguimientos/SeguimientoIndividual';
 import App from './App.jsx';
-import { Seguimiento } from './views/Seguimiento.jsx';
+import { SeguimientoHome } from './views/seguimientos/SeguimientoHome';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,8 +47,12 @@ const router = createBrowserRouter([
     element: <SolicitudAsesoria />,
   },
   {
-    path: "/seguimiento",
-    element: <Seguimiento />,
+    path: "/seguimientos",
+    element: <SeguimientoHome />,
+  },
+  {
+    path: "/seguimientos/:id",
+    element: <SeguimientoIndividual />
   }
 ]);
 
