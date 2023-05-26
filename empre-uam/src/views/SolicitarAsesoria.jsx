@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import '../assets/fonts/fonts.css';
 import '../assets/css/SolicitarAsesoria.css';
@@ -42,9 +43,9 @@ export const Solicitar = () => {
           <ul>
             <Link to={"/"}>
               <li className="navbar-close-sesion">Cerrar sesion</li>
-            </Link> 
+            </Link>
           </ul>
-      </div>
+        </div>
       </nav>
       <section className="solicitar-asesoria">
 
@@ -53,21 +54,21 @@ export const Solicitar = () => {
           <form onSubmit={handleSubmit}>
             <div className="formGroup">
               {/* labels */}
-              
+
               <div className="labels">
                 <label htmlFor="Negocio">Negocio:</label>
               </div>
               <div className="inputs" >
-                <select 
+                <select
                   type="select"
                   id="tema"
                   value={negocio}
                   onChange={(event) => setNegocio(event.target.value)}>
 
-                    <option value="Negocio1">Negocio1</option>
-                    <option value="Negocio2">Negocio2</option>
-                    <option value="Negocio3">Negocio3</option>
-                    <option value="Negocio4">Negocio4</option>
+                  <option value="Negocio1">Negocio1</option>
+                  <option value="Negocio2">Negocio2</option>
+                  <option value="Negocio3">Negocio3</option>
+                  <option value="Negocio4">Negocio4</option>
                 </select>
               </div>
               <div className="labels">

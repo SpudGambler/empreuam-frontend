@@ -6,11 +6,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 //import { Login } from './views/Login.jsx';
+import { NegociosHome } from './views/negocios/negociosHome.jsx';
 import { Home } from './views/Home.jsx';
 import { Register } from './views/Register.jsx';
 import { Solicitar } from './views/SolicitarAsesoria.jsx';
+import { RegistroNegocio } from './views/negocios/RegistroNegocio.jsx';
 import App from './App.jsx';
-import { BusinessRegister } from './views/businessRegister.jsx';
 import { Seguimiento } from './views/Seguimiento.jsx';
 const router = createBrowserRouter([
   {
@@ -22,16 +23,20 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
+    path: "/negocios",
+    element: <NegociosHome />,
+  },
+  {
+    path: "/negocios/registro",
+    element: <RegistroNegocio />,
+  },
+  {
     path: "/register",
     element: <Register />,
   },
   {
     path: "/solicitarAsesoria",
     element: <Solicitar />,
-  },
-  {
-    path: "/registroNegocio",
-    element: <BusinessRegister />,
   },
   {
     path: "/seguimiento",

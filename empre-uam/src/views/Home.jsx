@@ -18,7 +18,7 @@ import InstagramIcon from '../assets/icons/insta.png';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { Navbar } from '../components/Navbar/Navbar';
-import { NoAuthNavbar } from '../components/NoAuthNavbar/NoAuthNavbar'
+import { NoAuthNavbar } from '../components/NoAuthNavbar/NoAuthNavbar';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -56,18 +56,18 @@ export const Home = () => {
       <section className="section2">
 
         <div className="negocio-container">
-          <h1 className="negocio-title"> Registrar Negocio</h1>
+          <h1 className="negocio-title">Gestion de Negocios</h1>
           <img src={EquipoImg} className="negocio-logo" />
-          <Link to={"/registroNegocio"}>
-            <input type="submit" value="REGISTRAR NEGOCIO" className="primary-button negocio-button" />
+          <Link to={"/negocios"}>
+            <input type="submit" value="Ingresar a Negocios" className="primary-button negocio-button" />
           </Link>
         </div>
 
         <div className="asesorias-container">
-          <h1 className="asesorias-title"> Asesorias</h1>
+          <h1 className="asesorias-title">Gestion de Asesorias</h1>
           <img src={AsesoriaImg} className="asesoria-logo" />
           <Link to={"/solicitarAsesoria"}>
-            <input type="submit" value="SOLICITAR" className="primary-button asesorias-button" />
+            <input type="submit" value="Ingresar a Asesorias" className="primary-button asesorias-button" />
           </Link>
         </div>
 
@@ -75,7 +75,7 @@ export const Home = () => {
           <h1 className="seguimiento-title"> Seguimiento individual</h1>
           <img src={CheckList} className="seguimiento-logo" />
           <Link to={"/seguimiento"}>
-            <input type="submit" value="VER TAREAS" className="primary-button tareas-button" />
+            <input type="submit" value="Ingresar a Seguimientos" className="primary-button tareas-button" />
           </Link>
         </div>
 
