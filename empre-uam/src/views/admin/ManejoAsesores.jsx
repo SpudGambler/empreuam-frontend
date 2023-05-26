@@ -9,45 +9,48 @@ import FacebookIcon from '../../assets/icons/facebook.png';
 import TwitterIcon from '../../assets/icons/twitter.png';
 import InstagramIcon from '../../assets/icons/insta.png';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Navbar } from '../../components/Navbar/Navbar';
 import { NoAuthNavbar } from '../../components/NoAuthNavbar/NoAuthNavbar';
 
 export const ManejoAsesores = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
-    const [businesses, setBusinesses] = useState([]);
+    const [advisors, setAdvisors] = useState([]);
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
     const [documento, setDocumento] = useState("");
     const [correo, setCorreo] = useState("");
-    const [celular, setCelular] = useState("");
+    const [sector, setSector] = useState("");
+    const [titulo, setTitulo] = useState("");
     const [contrasena, setContrasena] = useState("");
     const [confirmarContrasena, setConfirmarContrasena] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const token = localStorage.getItem("token");
         const requestOptions = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            nombre: nombre,
-            apellido: apellido,
-            documento: documento,
-            password: contrasena,
-            rol: 'e',
-            email: correo,
-            celular: celular
-          })
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+            body: JSON.stringify({
+                nombre: nombre,
+                apellido: apellido,
+                documento: documento,
+                password: contrasena,
+                rol: 'as',
+                email: correo,
+                sector: sector,
+                titulo: titulo,
+            })
         };
-        fetch('http://localhost:3000/api/v1/auth/register/entrepreneur', requestOptions)
-          .then((response) => {
-            if (response.ok) {
-              navigate('/');
-            }
-          })
-          .catch(error => console.log(error));
-      };
+        fetch('http://localhost:3000/api/v1/auth/register/adviser', requestOptions)
+            .then((response) => {
+                if (response.ok) {
+                    window.location.reload(false);
+                }
+            })
+            .catch(error => console.log(error));
+    };
 
     useEffect(() => {
         async function getUser() {
@@ -67,16 +70,16 @@ export const ManejoAsesores = () => {
                 .catch(error => console.log(error));
         }
         getUser();
-        async function getBusinesses() {
+        async function getAdvisor() {
             const token = localStorage.getItem("token");
-            await fetch('http://localhost:3000/api/v1/businesses/me', {
+            await fetch('http://localhost:3000/api/v1/users', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
             }).then(async (response) => await response.json()).then(({ data }) => {
-                setBusinesses(data);
+                setAdvisors(data.filter((user) => user.rol === "as"));
             })
         }
-        getBusinesses();
+        getAdvisor();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -88,7 +91,7 @@ export const ManejoAsesores = () => {
                     <h1 className="negocios-title"> Asesores</h1>
                     <div className='lista-negocios'>
                         <ul>
-                            {businesses.map(business => <h1 key={business}>{business.nombre}</h1>)}
+                            {advisors.map(advisor => <h1 key={advisor}>{advisor.nombre}</h1>)}
                         </ul>
                     </div>
                 </div>
@@ -97,61 +100,68 @@ export const ManejoAsesores = () => {
                         <h1 className="title">Registro Asesores</h1>
                         <form onSubmit={handleSubmit}>
                             <div className="formGroup">
-                            {/* labels */}
-                            <div className="labels">
-                                <label htmlFor="nombre">Nombre:</label>
-                                <label htmlFor="apellido">Apellido:</label>
-                                <label htmlFor="documento">Documento:</label>
-                                <label htmlFor="correo">Correo:</label>
-                                <label htmlFor="celular">Celular:</label>
-                                <label htmlFor="contrasena">Contraseña:</label>
-                                <label htmlFor="confirmarContrasena">Confirmar contraseña:</label>
-                            </div>
-                            {/* inputs */}
-                            <div className="inputs">
-                                <input
-                                type="text"
-                                id="nombre"
-                                value={nombre}
-                                onChange={(event) => setNombre(event.target.value)}
-                                />
-                                <input
-                                type="text"
-                                id="apellido"
-                                value={apellido}
-                                onChange={(event) => setApellido(event.target.value)}
-                                />
-                                <input
-                                type="text"
-                                id="documento"
-                                value={documento}
-                                onChange={(event) => setDocumento(event.target.value)}
-                                />
-                                <input
-                                type="email"
-                                id="correo"
-                                value={correo}
-                                onChange={(event) => setCorreo(event.target.value)}
-                                />
-                                <input
-                                type="celular"
-                                id="celular"
-                                value={celular}
-                                onChange={(event) => setCelular(event.target.value)}
-                                />
-                                <input
-                                type="password"
-                                id="contrasena"
-                                value={contrasena}
-                                onChange={(event) => setContrasena(event.target.value)}
-                                />
-                                <input
-                                type="password"
-                                id="confirmarContrasena"
-                                value={confirmarContrasena}
-                                onChange={(event) => setConfirmarContrasena(event.target.value)}
-                                />
-                            </div>
+                                {/* labels */}
+                                <div className="labels">
+                                    <label htmlFor="nombre">Nombre:</label>
+                                    <label htmlFor="apellido">Apellido:</label>
+                                    <label htmlFor="documento">Documento:</label>
+                                    <label htmlFor="correo">Correo:</label>
+                                    <label htmlFor="sector">Sector:</label>
+                                    <label htmlFor="titulo">Titulo:</label>
+                                    <label htmlFor="contrasena">Contraseña:</label>
+                                    <label htmlFor="confirmarContrasena">Confirmar contraseña:</label>
+                                </div>
+                                {/* inputs */}
+                                <div className="inputs">
+                                    <input
+                                        type="text"
+                                        id="nombre"
+                                        value={nombre}
+                                        onChange={(event) => setNombre(event.target.value)}
+                                    />
+                                    <input
+                                        type="text"
+                                        id="apellido"
+                                        value={apellido}
+                                        onChange={(event) => setApellido(event.target.value)}
+                                    />
+                                    <input
+                                        type="text"
+                                        id="documento"
+                                        value={documento}
+                                        onChange={(event) => setDocumento(event.target.value)}
+                                    />
+                                    <input
+                                        type="email"
+                                        id="correo"
+                                        value={correo}
+                                        onChange={(event) => setCorreo(event.target.value)}
+                                    />
+                                    <input
+                                        type="text"
+                                        id="sector"
+                                        value={sector}
+                                        onChange={(event) => setSector(event.target.value)}
+                                    />
+                                    <input
+                                        type="text"
+                                        id="titulo"
+                                        value={titulo}
+                                        onChange={(event) => setTitulo(event.target.value)}
+                                    />
+                                    <input
+                                        type="password"
+                                        id="contrasena"
+                                        value={contrasena}
+                                        onChange={(event) => setContrasena(event.target.value)}
+                                    />
+                                    <input
+                                        type="password"
+                                        id="confirmarContrasena"
+                                        value={confirmarContrasena}
+                                        onChange={(event) => setConfirmarContrasena(event.target.value)}
+                                    />
+                                </div>
                             </div>
                             {/* <Link to={"/home"}> */}
                             <input type="submit" value="REGISTRARSE" className="primary-button login-button" />

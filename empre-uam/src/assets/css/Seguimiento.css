@@ -1,10 +1,8 @@
-
-
-
 .seguimiento {
     display: flex;
     background-image: url(../imgs/periferica.jpg);
 }
+
 .negocios-container {
     display: grid;
     width: 50%;
@@ -17,6 +15,7 @@
     margin-top: 4%;
     margin-bottom: 4%;
 }
+
 .negocios-title {
     margin-top: 5px;
     justify-self: center;
@@ -24,6 +23,7 @@
     margin-bottom: 0;
     color: var(--yellow);
 }
+
 .solicitudes-container {
     display: grid;
     width: 50%;
@@ -36,6 +36,7 @@
     margin-top: 4%;
     margin-bottom: 4%;
 }
+
 .solicitudes-title {
     margin-top: 5px;
     justify-self: center;

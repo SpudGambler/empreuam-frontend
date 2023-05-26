@@ -16,7 +16,7 @@ import { NoAuthNavbar } from '../../components/NoAuthNavbar/NoAuthNavbar';
 export const ManejoEmprendedores = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
-    const [businesses, setBusinesses] = useState([]);
+    const [entrepreneurs, setEntrepreneurs] = useState([]);
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
     const [documento, setDocumento] = useState("");
@@ -72,16 +72,16 @@ export const ManejoEmprendedores = () => {
                 .catch(error => console.log(error));
         }
         getUser();
-        async function getBusinesses() {
+        async function getEntrepreneurs() {
             const token = localStorage.getItem("token");
             await fetch('http://localhost:3000/api/v1/users', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
             }).then(async (response) => await response.json()).then(({ data }) => {
-                setBusinesses(data.filter((user) => user.rol === "e"));
+                setEntrepreneurs(data.filter((user) => user.rol === "e"));
             })
         }
-        getBusinesses();
+        getEntrepreneurs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -93,7 +93,7 @@ export const ManejoEmprendedores = () => {
                     <h1 className="negocios-title"> Emprendedores</h1>
                     <div className='lista-negocios'>
                         <ul>
-                            {businesses.map(business => <h1 key={business}>{business.nombre}</h1>)}
+                            {entrepreneurs.map(entrepreneur => <h1 key={entrepreneur}>{entrepreneur.nombre}</h1>)}
                         </ul>
                     </div>
                 </div>

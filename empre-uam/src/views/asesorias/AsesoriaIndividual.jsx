@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
-import '../../assets/css/ManejoAsesorias.css';
-
+import '../../assets/fonts/fonts.css';
+import '../../assets/css/Seguimiento.css';
 import LogoFooter from '../../assets/logos/PNG/Logos_UAM-03.png';
 import LocationIcon from '../../assets/icons/location3.png';
 import CalendarIcon from '../../assets/icons/calendar.png';
@@ -9,15 +9,18 @@ import PhoneIcon from '../../assets/icons/phone.png';
 import FacebookIcon from '../../assets/icons/facebook.png';
 import TwitterIcon from '../../assets/icons/twitter.png';
 import InstagramIcon from '../../assets/icons/insta.png';
+import { useParams } from 'react-router';
 
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from '../../components/Navbar/Navbar';
 import { NoAuthNavbar } from '../../components/NoAuthNavbar/NoAuthNavbar';
 
-export const ManejoAsesorias = () => {
+export const AsesoriaIndividual = () => {
+    const { id } = useParams();
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
-    const [followUps, setFollowUps] = useState([]);
+    const [followUp, setFollowUp] = useState({});
+
     useEffect(() => {
         async function getUser() {
             const token = localStorage.getItem("token");
@@ -36,37 +39,44 @@ export const ManejoAsesorias = () => {
                 .catch(error => console.log(error));
         }
         getUser();
-        async function getFollowUps() {
+        async function getFollowUp() {
+            const url = 'http://localhost:3000/api/v1/followUps/' + id
             const token = localStorage.getItem("token");
-            await fetch('http://localhost:3000/api/v1/followUps', {
+            await fetch(url, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
             }).then(async (response) => await response.json()).then(({ data }) => {
-                setFollowUps(data);
+                setFollowUp(data);
             })
         }
-        getFollowUps();
+        getFollowUp();
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
     return (
         <>
             {user ? <Navbar /> : <NoAuthNavbar />}
-            <section className='sect1'>
-                <section className='asesorias'>
-                    <div className='a-container'>
-                        <h1 className="negocios-title"> Asesorias</h1>
-                        <div className='lista-negocios'>
-                            <ul>
-                                {followUps.map(followUp => <h1 key={followUp}>{followUp.id} - {followUp.emprendedor_id} - {followUp.categoria_proyecto} - {followUp.status}</h1>)}
-                            </ul>
-                        </div>
+            <h1 className="solicitudes-title">Asesoria {followUp.id} sobre {followUp.categoria_proyecto}</h1>
+            <section className='seguimiento'>
+
+                <div className='solicitudes-container'>
+                    <h1 className="solicitudes-title">Sesiones</h1>
+                    <div className='lista-solicitudes'>
+                        <ul>
+                            <table>
+                                {/* {followUp.map(followUp => <tr key={followUp}>
+                                    <td>{followUp.id} - </td>
+                                    <td>{followUp.categoria_proyecto} - </td>
+                                    <td>{followUp.status} - </td>
+                                </tr>)} */}
+                            </table>
+                        </ul>
                     </div>
-
-                </section>
+                </div>
             </section>
+            <section className='tareas'>
 
-
+            </section>
 
             <section>
                 <footer className="footer">

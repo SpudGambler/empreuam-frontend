@@ -1,11 +1,30 @@
-
 .sect1 {
     background-image: url(../imgs/periferica.jpg);
     margin-top: 0;
     height: 700px;
 }
+
 .asesorias {
     display: flex;
     justify-content: center;
     height: 80%;
+}
+
+.lista-negocios {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 0;
+}
+
+.a-container {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--blue);
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--blue);
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
