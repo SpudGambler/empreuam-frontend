@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './assets/fonts/fonts.css';
+import './assets/css/SolicitarAsesoria.css';
 
 import {
   createBrowserRouter,
@@ -9,7 +11,8 @@ import {
 import { NegociosHome } from './views/negocios/negociosHome.jsx';
 import { Home } from './views/Home.jsx';
 import { Register } from './views/Register.jsx';
-import { Solicitar } from './views/SolicitarAsesoria.jsx';
+import { SolicitudAsesoria } from './views/asesorias/SolicitudAsesoria';
+import { AsesoriasHome } from './views/asesorias/AsesoriasHome.jsx';
 import { RegistroNegocio } from './views/negocios/RegistroNegocio.jsx';
 import App from './App.jsx';
 import { Seguimiento } from './views/Seguimiento.jsx';
@@ -35,8 +38,12 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/solicitarAsesoria",
-    element: <Solicitar />,
+    path: "/asesorias",
+    element: <AsesoriasHome />,
+  },
+  {
+    path: "/asesorias/solicitud",
+    element: <SolicitudAsesoria />,
   },
   {
     path: "/seguimiento",

@@ -66,7 +66,7 @@ export const Home = () => {
         <div className="asesorias-container">
           <h1 className="asesorias-title">Gestion de Asesorias</h1>
           <img src={AsesoriaImg} className="asesoria-logo" />
-          <Link to={"/solicitarAsesoria"}>
+          <Link to={"/asesorias"}>
             <input type="submit" value="Ingresar a Asesorias" className="primary-button asesorias-button" />
           </Link>
         </div>

@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import LogoNavbar from '../../assets/logos/PNG/Logos_UAM-07.png';
+import "../../assets/css/Home.css"
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
@@ -16,7 +17,6 @@ export const Navbar = () => {
           if (response.ok) {
             const body = await response.json();
             setUser(body);
-            console.log(body.nombre);
           }
         })
         .catch(error => console.log(error));
@@ -41,7 +41,7 @@ export const Navbar = () => {
       <ul>
         <li className="navbar-close-sesion">{user.nombre}</li>
         <Link to={"/"} onClick={logOut}>
-          <li className="navbar-close-sesion">Cerrar sesion</li>
+          <li className="navbar-close-sesion">  Cerrar sesion</li>
         </Link>
       </ul>
     </div>
