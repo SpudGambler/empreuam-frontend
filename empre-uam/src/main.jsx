@@ -14,6 +14,7 @@ import { Register } from './views/Register.jsx';
 import { SolicitudAsesoria } from './views/asesorias/SolicitudAsesoria';
 import { AsesoriasHome } from './views/asesorias/AsesoriasHome.jsx';
 import { RegistroNegocio } from './views/negocios/RegistroNegocio.jsx';
+import { SeguimientoIndividual } from './views/seguimientos/SeguimientoIndividual';
 import App from './App.jsx';
 import { Seguimiento } from './views/Seguimiento.jsx';
 import { AdminHome } from './views/admin/AdminHome.jsx';
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
   {
     path: "/seguimiento",
     element: <Seguimiento />,
-  },
+  }, 
   {
     path: "/AdminHome",
     element: <AdminHome />,

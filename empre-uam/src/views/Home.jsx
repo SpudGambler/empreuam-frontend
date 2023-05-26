@@ -74,7 +74,7 @@ export const Home = () => {
         <div className="seguimiento-container">
           <h1 className="seguimiento-title"> Seguimiento individual</h1>
           <img src={CheckList} className="seguimiento-logo" />
-          <Link to={"/seguimiento"}>
+          <Link to={"/seguimientos"}>
             <input type="submit" value="Ingresar a Seguimientos" className="primary-button tareas-button" />
           </Link>
         </div>
