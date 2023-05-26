@@ -52,9 +52,10 @@ export const ManejoAsesorias = () => {
     return (
         <>
             {user ? <Navbar /> : <NoAuthNavbar />}
+            <section className='sect1'>
             <section className='asesorias'>
                 <div className='negocios-container'>
-                    <h1 className="negocios-title"> Negocios</h1>
+                    <h1 className="negocios-title"> Asesorias</h1>
                     <div className='lista-negocios'>
                         <ul>
                             {businesses.map(business => <h1 key={business}>{business.nombre}</h1>)}
@@ -63,9 +64,9 @@ export const ManejoAsesorias = () => {
                 </div>
                 
             </section>
-            <section className='tareas'>
-
             </section>
+            
+            
 
             <section>
                 <footer className="footer">
