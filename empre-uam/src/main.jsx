@@ -53,7 +53,11 @@ const router = createBrowserRouter([
   {
     path: "/seguimiento",
     element: <Seguimiento />,
-  }, 
+  },
+  {
+    path: "/seguimiento/:id",
+    element: <SeguimientoIndividual />,
+  },
   {
     path: "/AdminHome",
     element: <AdminHome />,
