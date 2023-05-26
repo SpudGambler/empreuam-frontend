@@ -8,7 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 //import { Login } from './views/Login.jsx';
-import { NegociosHome } from './views/negocios/negociosHome.jsx';
+import { NegociosHome } from './views/negocios/NegociosHome.jsx';
 import { Home } from './views/Home.jsx';
 import { Register } from './views/Register.jsx';
 import { SolicitudAsesoria } from './views/asesorias/SolicitudAsesoria';
@@ -16,6 +16,10 @@ import { AsesoriasHome } from './views/asesorias/AsesoriasHome.jsx';
 import { RegistroNegocio } from './views/negocios/RegistroNegocio.jsx';
 import App from './App.jsx';
 import { Seguimiento } from './views/Seguimiento.jsx';
+import { AdminHome } from './views/admin/AdminHome.jsx';
+import { ManejoAsesores } from './views/admin/ManejoAsesores.jsx';
+import { ManejoEmprendedores } from './views/admin/ManejoEmprendedores.jsx';
+import { ManejoAsesorias } from './views/admin/ManejoAsesorias.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,6 +52,22 @@ const router = createBrowserRouter([
   {
     path: "/seguimiento",
     element: <Seguimiento />,
+  },
+  {
+    path: "/AdminHome",
+    element: <AdminHome />,
+  },
+  {
+    path: "/ManejoAsesores",
+    element: <ManejoAsesores />,
+  },
+  {
+    path: "/ManejoEmprendedores",
+    element: <ManejoEmprendedores />,
+  },
+  {
+    path: "/ManejoAsesorias",
+    element: <ManejoAsesorias />,
   }
 ]);
 
