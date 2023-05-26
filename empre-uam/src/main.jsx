@@ -16,11 +16,11 @@ import { AsesoriasHome } from './views/asesorias/AsesoriasHome.jsx';
 import { RegistroNegocio } from './views/negocios/RegistroNegocio.jsx';
 import { SeguimientoIndividual } from './views/seguimientos/SeguimientoIndividual';
 import App from './App.jsx';
-import { Seguimiento } from './views/Seguimiento.jsx';
 import { AdminHome } from './views/admin/AdminHome.jsx';
 import { ManejoAsesores } from './views/admin/ManejoAsesores.jsx';
 import { ManejoEmprendedores } from './views/admin/ManejoEmprendedores.jsx';
 import { ManejoAsesorias } from './views/admin/ManejoAsesorias.jsx';
+import { SeguimientoHome } from './views/seguimientos/SeguimientoHome';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/seguimiento",
-    element: <Seguimiento />,
+    element: <SeguimientoHome />,
   },
   {
     path: "/seguimiento/:id",
