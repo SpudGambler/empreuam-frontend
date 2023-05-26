@@ -9,7 +9,7 @@ import FacebookIcon from '../../assets/icons/facebook.png';
 import TwitterIcon from '../../assets/icons/twitter.png';
 import InstagramIcon from '../../assets/icons/insta.png';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Navbar } from '../../components/Navbar/Navbar';
 import { NoAuthNavbar } from '../../components/NoAuthNavbar/NoAuthNavbar';
 
@@ -28,26 +28,26 @@ export const ManejoEmprendedores = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const requestOptions = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            nombre: nombre,
-            apellido: apellido,
-            documento: documento,
-            password: contrasena,
-            rol: 'e',
-            email: correo,
-            celular: celular
-          })
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                nombre: nombre,
+                apellido: apellido,
+                documento: documento,
+                password: contrasena,
+                rol: 'e',
+                email: correo,
+                celular: celular
+            })
         };
         fetch('http://localhost:3000/api/v1/auth/register/entrepreneur', requestOptions)
-          .then((response) => {
-            if (response.ok) {
-              navigate('/');
-            }
-          })
-          .catch(error => console.log(error));
-      };
+            .then((response) => {
+                if (response.ok) {
+                    window.location.reload(false);
+                }
+            })
+            .catch(error => console.log(error));
+    };
 
     useEffect(() => {
         async function getUser() {
@@ -60,6 +60,11 @@ export const ManejoEmprendedores = () => {
                     if (response.ok) {
                         const body = await response.json();
                         setUser(body);
+                        if (body.rol !== "ad") {
+                            if (body.rol === "e") {
+                                navigate('/home');
+                            }
+                        }
                     } else {
                         navigate('/');
                     }
@@ -69,11 +74,11 @@ export const ManejoEmprendedores = () => {
         getUser();
         async function getBusinesses() {
             const token = localStorage.getItem("token");
-            await fetch('http://localhost:3000/api/v1/businesses/me', {
+            await fetch('http://localhost:3000/api/v1/users', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
             }).then(async (response) => await response.json()).then(({ data }) => {
-                setBusinesses(data);
+                setBusinesses(data.filter((user) => user.rol === "e"));
             })
         }
         getBusinesses();
@@ -97,61 +102,61 @@ export const ManejoEmprendedores = () => {
                         <h1 className="title">Registro Emprendedores</h1>
                         <form onSubmit={handleSubmit}>
                             <div className="formGroup">
-                            {/* labels */}
-                            <div className="labels">
-                                <label htmlFor="nombre">Nombre:</label>
-                                <label htmlFor="apellido">Apellido:</label>
-                                <label htmlFor="documento">Documento:</label>
-                                <label htmlFor="correo">Correo:</label>
-                                <label htmlFor="celular">Celular:</label>
-                                <label htmlFor="contrasena">Contraseña:</label>
-                                <label htmlFor="confirmarContrasena">Confirmar contraseña:</label>
-                            </div>
-                            {/* inputs */}
-                            <div className="inputs">
-                                <input
-                                type="text"
-                                id="nombre"
-                                value={nombre}
-                                onChange={(event) => setNombre(event.target.value)}
-                                />
-                                <input
-                                type="text"
-                                id="apellido"
-                                value={apellido}
-                                onChange={(event) => setApellido(event.target.value)}
-                                />
-                                <input
-                                type="text"
-                                id="documento"
-                                value={documento}
-                                onChange={(event) => setDocumento(event.target.value)}
-                                />
-                                <input
-                                type="email"
-                                id="correo"
-                                value={correo}
-                                onChange={(event) => setCorreo(event.target.value)}
-                                />
-                                <input
-                                type="celular"
-                                id="celular"
-                                value={celular}
-                                onChange={(event) => setCelular(event.target.value)}
-                                />
-                                <input
-                                type="password"
-                                id="contrasena"
-                                value={contrasena}
-                                onChange={(event) => setContrasena(event.target.value)}
-                                />
-                                <input
-                                type="password"
-                                id="confirmarContrasena"
-                                value={confirmarContrasena}
-                                onChange={(event) => setConfirmarContrasena(event.target.value)}
-                                />
-                            </div>
+                                {/* labels */}
+                                <div className="labels">
+                                    <label htmlFor="nombre">Nombre:</label>
+                                    <label htmlFor="apellido">Apellido:</label>
+                                    <label htmlFor="documento">Documento:</label>
+                                    <label htmlFor="correo">Correo:</label>
+                                    <label htmlFor="celular">Celular:</label>
+                                    <label htmlFor="contrasena">Contraseña:</label>
+                                    <label htmlFor="confirmarContrasena">Confirmar contraseña:</label>
+                                </div>
+                                {/* inputs */}
+                                <div className="inputs">
+                                    <input
+                                        type="text"
+                                        id="nombre"
+                                        value={nombre}
+                                        onChange={(event) => setNombre(event.target.value)}
+                                    />
+                                    <input
+                                        type="text"
+                                        id="apellido"
+                                        value={apellido}
+                                        onChange={(event) => setApellido(event.target.value)}
+                                    />
+                                    <input
+                                        type="text"
+                                        id="documento"
+                                        value={documento}
+                                        onChange={(event) => setDocumento(event.target.value)}
+                                    />
+                                    <input
+                                        type="email"
+                                        id="correo"
+                                        value={correo}
+                                        onChange={(event) => setCorreo(event.target.value)}
+                                    />
+                                    <input
+                                        type="celular"
+                                        id="celular"
+                                        value={celular}
+                                        onChange={(event) => setCelular(event.target.value)}
+                                    />
+                                    <input
+                                        type="password"
+                                        id="contrasena"
+                                        value={contrasena}
+                                        onChange={(event) => setContrasena(event.target.value)}
+                                    />
+                                    <input
+                                        type="password"
+                                        id="confirmarContrasena"
+                                        value={confirmarContrasena}
+                                        onChange={(event) => setConfirmarContrasena(event.target.value)}
+                                    />
+                                </div>
                             </div>
                             {/* <Link to={"/home"}> */}
                             <input type="submit" value="REGISTRARSE" className="primary-button login-button" />

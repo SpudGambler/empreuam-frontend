@@ -32,7 +32,13 @@ export const Login = () => {
       })
         .then(async (response) => {
           if (response.ok) {
-            navigate('/home');
+            const body = await response.json();
+            console.log(body);
+            if (body.rol === "e") {
+              navigate('/home');
+            } else if (body.rol === "ad") {
+              navigate('/AdminHome');
+            }
           }
         })
         .catch(error => console.log(error));
@@ -52,10 +58,28 @@ export const Login = () => {
       })
     })
       .then(async (response) => {
+        async function getUser() {
+          const token = localStorage.getItem("token");
+          await fetch('http://localhost:3000/api/v1/auth', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+          })
+            .then(async (response) => {
+              if (response.ok) {
+                const body = await response.json();
+                if (body.rol === "e") {
+                  navigate('/home');
+                } else if (body.rol === "ad") {
+                  navigate('/AdminHome');
+                }
+              }
+            })
+            .catch(error => console.log(error));
+        }
         if (response.ok) {
           const body = await response.json();
           localStorage.setItem('token', body.token);
-          navigate('/home');
+          getUser();
         }
       })
       .catch(error => console.log(error));

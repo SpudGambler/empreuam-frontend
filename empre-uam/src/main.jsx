@@ -51,11 +51,11 @@ const router = createBrowserRouter([
     element: <SolicitudAsesoria />,
   },
   {
-    path: "/seguimiento",
+    path: "/seguimientos",
     element: <SeguimientoHome />,
   },
   {
-    path: "/seguimiento/:id",
+    path: "/seguimientos/:id",
     element: <SeguimientoIndividual />,
   },
   {

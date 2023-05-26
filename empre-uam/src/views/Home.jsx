@@ -34,6 +34,11 @@ export const Home = () => {
           if (response.ok) {
             const body = await response.json();
             setUser(body);
+            if (body.rol !== "e") {
+              if (body.rol === "ad") {
+                navigate('/AdminHome');
+              }
+            }
           } else {
             navigate('/');
           }
