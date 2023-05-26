@@ -1,6 +1,11 @@
+
+.sect1 {
+    background-image: url(../imgs/periferica.jpg);
+    margin-top: 0;
+    height: 700px;
+}
 .asesorias {
+    display: flex;
     justify-content: center;
-    margin-left: 25%;
-    height: 500px;
-    margin-bottom: 5%;
+    height: 80%;
 }
